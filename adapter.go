@@ -147,7 +147,7 @@ func (a *Adapter) LoadPolicy(model model.Model) error {
 }
 
 func (a *Adapter) writeTableLine(stm *sql.Stmt, ptype string, rule []string) error {
-	params := make([]string, 7)
+	params := make([]interface{}, 7)
 	params = append(params, ptype)
 	for i, v := range rule {
 		params[i] = v
